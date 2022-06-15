@@ -1,30 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import BreweryList from './BreweryList.jsx';
+import Search from './Search.jsx';
 
 export default function App() {
-  const [list, setList] = useState({ list: [] });
-  const [query, setQuery] = useState('portland');
-
-  useEffect(() => {
-    let ignore = false;
-
-    async function fetchBreweries() {
-      const result = await axios('https://api.openbrewerydb.org/breweries?by_city=' + query);
-      if (!ignore) setList(result.data);
-    }
-
-    fetchBreweries();
-    return () => { ignore = true; }
-  }, [query]);
-
-  console.log(list)
+  const [list, setList] = useState([]);
+  const [query, setQuery] = useState('');
 
   return (
-    <>
-      <h1>Brewery List in Portland</h1>
+    <div>
+      <h1>Brewery Locator</h1>
+      <Search
+        list={list}
+        setList={setList}
+        query={query}
+        setQuery={setQuery}
+      />
       <BreweryList list={list}/>
-    </>
+    </div>
     )
 };
