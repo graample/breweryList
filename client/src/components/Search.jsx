@@ -33,7 +33,7 @@ export default function Search({ list, setList, query, setQuery }) {
         <input
           onChange={handleChange}
           value={query}
-          placeholder='search for a city'
+          placeholder='enter a city'
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>

@@ -10,6 +10,7 @@ export default function App() {
   return (
     <div>
       <h1>Brewery Locator</h1>
+      <h4>Search for a city in the US</h4>
       <Search
         list={list}
         setList={setList}

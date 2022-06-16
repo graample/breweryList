@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: "development",
@@ -7,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, 'client/dist'),
     filename: "bundle.js"
   },
+  plugins: [
+    new Dotenv()
+  ],
   module: {
     rules: [
       {
@@ -27,5 +31,12 @@ module.exports = {
     },
     compress: true,
     port: 3001,
+  },
+  resolve: {
+    fallback: {
+      "fs": false,
+      "path": false,
+      "os": false
+    }
   }
 }
