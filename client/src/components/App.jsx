@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Typography from '@mui/material/Typography';
 
 import BreweryList from './BreweryList.jsx';
 import Search from './Search.jsx';
@@ -9,8 +10,12 @@ export default function App() {
 
   return (
     <div>
-      <h1>Brewery Locator</h1>
-      <h4>Search for a city in the US</h4>
+      <Typography variant="h4" component="div">
+        Brewery Locator
+      </Typography>
+      <Typography variant="h5" component="div">
+        Search for a city in the US
+      </Typography>
       <Search
         list={list}
         setList={setList}

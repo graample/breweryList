@@ -5,7 +5,7 @@ const MapComponent = ({ text }) => <div>{text}</div>;
 
 export default function GoogleMap(props) {
   return (
-    <div style={{ height: '30vh', width: '50%' }}>
+    <div style={{ height: '30vh', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.MAPS }}
         defaultCenter={props.center}
