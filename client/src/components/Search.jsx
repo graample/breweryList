@@ -1,4 +1,9 @@
-import React from 'react';
+import * as React from 'react';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import DirectionsIcon from '@mui/icons-material/Directions';
 import axios from 'axios';
 
 export default function Search({ list, setList, query, setQuery }) {
@@ -28,18 +33,22 @@ export default function Search({ list, setList, query, setQuery }) {
   }
 
   return (
-    <form>
-      <div>
-        <input
+    <>
+      <Paper
+        component="form"
+        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+      >
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Enter a city"
+          inputProps={{ 'aria-label': 'Enter a city' }}
           onChange={handleChange}
           value={query}
-          placeholder='enter a city'
         />
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-      <div>
-        ----------
-      </div>
-    </form>
+        <IconButton type="submit" sx={{ p: '10px' }} aria-label="search" onClick={handleSubmit}>
+          <SearchIcon />
+        </IconButton>
+      </Paper>
+    </>
   )
 }
