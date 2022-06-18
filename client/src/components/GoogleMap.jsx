@@ -14,7 +14,6 @@ export default function GoogleMap(props) {
         <MapComponent
           lat={props.center[0]}
           lng={props.center[1]}
-          text="Here!"
         />
       </GoogleMapReact>
     </div>

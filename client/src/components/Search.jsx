@@ -33,7 +33,7 @@ export default function Search({ list, setList, query, setQuery }) {
   }
 
   return (
-    <>
+    <div>
       <Paper
         component="form"
         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
@@ -49,6 +49,6 @@ export default function Search({ list, setList, query, setQuery }) {
           <SearchIcon />
         </IconButton>
       </Paper>
-    </>
+    </div>
   )
 }

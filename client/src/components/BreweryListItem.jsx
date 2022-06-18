@@ -5,6 +5,12 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SportsBarIcon from '@mui/icons-material/SportsBar';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 
 import GoogleMap from './GoogleMap.jsx';
 
@@ -15,13 +21,12 @@ export default function BreweryListItem(props) {
     : center = null
   return (
     <>
-      <Accordion>
+      <Accordion TransitionProps={{ unmountOnExit: true }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
         >
           <Typography>{props.item.name}</Typography>
+          <Chip icon={<SportsBarIcon />} label={props.item.brewery_type} sx={{ ml: "auto" }}/>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
