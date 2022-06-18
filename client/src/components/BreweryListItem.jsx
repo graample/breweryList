@@ -15,6 +15,29 @@ import Stack from '@mui/material/Stack';
 import GoogleMap from './GoogleMap.jsx';
 
 export default function BreweryListItem(props) {
+  var typeDescription;
+  if (props.item.brewery_type === 'micro') {
+    typeDescription = 'Most craft breweries. For example, Samual Adams is still considered a micro brewery.';
+  } else if (props.item.brewery_type === 'nano') {
+    typeDescription = 'An extremely small brewery which typically only distributes locally.';
+  } else if (props.item.brewery_type === 'regional') {
+    typeDescription = 'A regional location of an expanded brewery. Ex. Sierra Nevada’s Asheville, NC location.';
+  } else if (props.item.brewery_type === 'brewpub') {
+    typeDescription = 'A beer-focused restaurant or restaurant/bar with a brewery on-premise.';
+  } else if (props.item.brewery_type === 'large') {
+    typeDescription = 'A very large brewery. Likely not for visitors. Ex. Miller-Coors.';
+  } else if (props.item.brewery_type === 'planning') {
+    typeDescription = 'A brewery in planning or not yet opened to the public.';
+  } else if (props.item.brewery_type === 'bar') {
+    typeDescription = 'A bar. No brewery equipment on premise.';
+  } else if (props.item.brewery_type === 'contract') {
+    typeDescription = 'A brewery that uses another brewery’s equipment.';
+  } else if (props.item.brewery_type === 'proprietor') {
+    typeDescription = 'Similar to contract brewing but refers more to a brewery incubator.';
+  } else if (props.item.brewery_type === 'closed') {
+    typeDescription = 'A location which has been closed.';
+  }
+
   var center;
   props.item.latitude
     ? center = [parseFloat(props.item.latitude), parseFloat(props.item.longitude)]
@@ -26,7 +49,9 @@ export default function BreweryListItem(props) {
           expandIcon={<ExpandMoreIcon />}
         >
           <Typography>{props.item.name}</Typography>
-          <Chip icon={<SportsBarIcon />} label={props.item.brewery_type} sx={{ ml: "auto" }}/>
+          <Tooltip title={typeDescription}>
+            <Chip icon={<SportsBarIcon />} label={props.item.brewery_type} sx={{ ml: "auto" }}/>
+          </Tooltip>
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">

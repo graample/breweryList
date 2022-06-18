@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div>
       <Typography variant="h4" component="div">
-        Brewery Locator
+        Gulp!
       </Typography>
       <Typography variant="h5" component="div">
         Search for a city in the US

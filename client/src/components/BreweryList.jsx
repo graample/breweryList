@@ -1,21 +1,22 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import BreweryListItem from './BreweryListItem.jsx';
 import Typography from '@mui/material/Typography';
+import TablePagination from '@mui/material/TablePagination';
 
 export default function BreweryList(props) {
-  var list;
+  var currentList;
   props.list.length > 0
-  ? list = props.list.map((eachItem, i) => {
+  ? currentList = props.list.map((eachItem, i) => {
     return <BreweryListItem item={eachItem} key={i}/>
   })
-  : list = ''
+  : currentList = ''
 
   return (
     <div>
-      {list
+      {currentList
       ? <div>
           <Typography>{props.list.length} breweries found:</Typography>
-          {list}
+          {currentList}
         </div>
       : ''}
     </div>
