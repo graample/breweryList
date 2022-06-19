@@ -6,11 +6,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 
 import GoogleMap from './GoogleMap.jsx';
 
