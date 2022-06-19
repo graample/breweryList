@@ -4,10 +4,10 @@
   "description": "A list of breweries pulled from the OpenBreweryDB API.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode=development",
+    "start": "node src/app.js",
+    "dev-start": "env-cmd ./config/dev.env nodemon src/index.js",
     "build": "webpack --mode=production",
     "dev": "webpack serve --open",
-    "test": "test",
     "server": "node server/index.js"
   },
   "repository": {
@@ -39,6 +39,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^7.1.0",
+    "env-cmd": "^10.1.0",
     "nodemon": "^2.0.16",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
