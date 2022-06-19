@@ -16,7 +16,7 @@ export default function Search({ list, setList, query, setQuery }) {
   const toggleSwitch = (e) => {
     setChecked(e.target.checked);
     if (!checked) {
-      setChosenUrl(process.env.SERVER + process.env.PORT + '/breweries');
+      setChosenUrl(process.env.REACT_APP_SERVER + process.env.REACT_APP_PORT + '/breweries');
     } else {
       setChosenUrl('https://api.openbrewerydb.org/breweries');
     }
@@ -38,7 +38,6 @@ export default function Search({ list, setList, query, setQuery }) {
     })
     .then(result => {
       if (result.data) {
-        console.log('found data!')
         setList(result.data)
       }
     })
