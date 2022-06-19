@@ -9,7 +9,10 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new Dotenv()
+    new Dotenv({
+      allowEmptyValues: true,
+      systemvars: true
+    })
   ],
   module: {
     rules: [
