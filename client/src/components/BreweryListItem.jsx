@@ -11,26 +11,37 @@ import Chip from '@mui/material/Chip';
 
 export default function BreweryListItem(props) {
   var typeDescription;
-  if (props.item.brewery_type === 'micro') {
-    typeDescription = 'Most craft breweries. For example, Samual Adams is still considered a micro brewery.';
-  } else if (props.item.brewery_type === 'nano') {
-    typeDescription = 'An extremely small brewery which typically only distributes locally.';
-  } else if (props.item.brewery_type === 'regional') {
-    typeDescription = 'A regional location of an expanded brewery. Ex. Sierra Nevada’s Asheville, NC location.';
-  } else if (props.item.brewery_type === 'brewpub') {
-    typeDescription = 'A beer-focused restaurant or restaurant/bar with a brewery on-premise.';
-  } else if (props.item.brewery_type === 'large') {
-    typeDescription = 'A very large brewery. Likely not for visitors. Ex. Miller-Coors.';
-  } else if (props.item.brewery_type === 'planning') {
-    typeDescription = 'A brewery in planning or not yet opened to the public.';
-  } else if (props.item.brewery_type === 'bar') {
-    typeDescription = 'A bar. No brewery equipment on premise.';
-  } else if (props.item.brewery_type === 'contract') {
-    typeDescription = 'A brewery that uses another brewery’s equipment.';
-  } else if (props.item.brewery_type === 'proprietor') {
-    typeDescription = 'Similar to contract brewing but refers more to a brewery incubator.';
-  } else if (props.item.brewery_type === 'closed') {
-    typeDescription = 'A location which has been closed.';
+  switch (props.item.brewery_type) {
+    case 'micro':
+      typeDescription = 'Most craft breweries. For example, Samual Adams is still considered a micro brewery.';
+      break;
+    case 'nano':
+      typeDescription = 'An extremely small brewery which typically only distributes locally.';
+      break;
+    case 'regional':
+      typeDescription = `A regional location of an expanded brewery. Ex. Sierra Nevada's Asheville, NC location.`;
+      break;
+    case 'brewpub':
+      typeDescription = 'A beer-focused restaurant or restaurant/bar with a brewery on-premise.';
+      break;
+    case 'large':
+      typeDescription = 'A very large brewery. Likely not for visitors. Ex. Miller-Coors.';
+      break;
+    case 'planning':
+      typeDescription = 'A brewery in planning or not yet opened to the public.';
+      break;
+    case 'bar':
+      typeDescription = 'A bar. No brewery equipment on premise.';
+      break;
+    case 'contract':
+      typeDescription = `A brewery that uses another brewery's equipment.`;
+      break;
+    case 'proprietor':
+      typeDescription = 'Similar to contract brewing but refers more to a brewery incubator.';
+      break;
+    case 'closed':
+      typeDescription = 'A location which has been closed.';
+      break;
   }
 
   var center;
