@@ -4,11 +4,10 @@
   "description": "A list of breweries pulled from the OpenBreweryDB API.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node server/index.js",
     "dev-start": "env-cmd ./config/dev.env nodemon src/index.js",
     "build": "webpack --mode=production",
-    "dev": "webpack serve --open",
-    "server": "node server/index.js"
+    "dev": "webpack serve --open"
   },
   "repository": {
     "type": "git",
