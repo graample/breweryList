@@ -4,11 +4,24 @@ A project formed as a week-long coding challenge for RSM powered by the OpenBrew
 
 Allows searches to be made for breweries listed in the US, queried by city.
 
+Type in the name of a city in the United States, and it'll give you a list of breweries in that city (or cities).
+
+Hover over the brewery type, and it'll tell you a little more about that brewery type.
+
+If the brewery has a website, you can click the link and it'll open in a new tab.
+
+There is a toggle for a custom database of breweries that can be referenced, but for now it only has its seed values. Will add a way to add more custom breweries.
+
+You can mouse over the brewery types and it'll tell you a little more about that brewery type.
+
 
 # How to set up
 
-- `npm install --force` (I know, probably not cool)
+- specify your API key and local variables in the .env file
+- `npm install`
 - `npm start`
+- navigate to your server/port
+- crack open a cold one ;)
 
 
 # Technologies used
@@ -16,10 +29,11 @@ Allows searches to be made for breweries listed in the US, queried by city.
 - React
 - MaterialUI
 - Webpack/Babel for transpiling
+- Node/Express
+- PostgreSQL
 
 
 # Future considerations
 
-- Build up a custom back-end with breweries saved in Postgres. Implement a way to switch between OpenBreweryDB and the custom back end (and try to make it look cool).
 - Make my own custom funny icons to add a personal touch.
 - Take screenshots of the breweries and mint them to the blockchain (???)
