@@ -41,7 +41,10 @@ app.get('/breweries', (req, res) => {
       return;
     }
     console.log('breweries get!');
-    res.send(result.rows[0].json_agg);
+    if (result) {
+      console.log('satisfactory query made!')
+      res.send(result.rows[0].json_agg);
+    }
   });
 });
 

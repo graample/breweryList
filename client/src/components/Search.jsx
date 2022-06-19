@@ -4,9 +4,26 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
+import Switch from '@mui/material/Switch';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import axios from 'axios';
 
 export default function Search({ list, setList, query, setQuery }) {
+  const [checked, setChecked] = React.useState(false);
+  const [chosenUrl, setChosenUrl] = React.useState('https://api.openbrewerydb.org/breweries');
+
+  const toggleSwitch = (e) => {
+    setChecked(e.target.checked);
+    if (!checked) {
+      console.log(process.env.SERVER)
+      console.log(process.env.PORT)
+      setChosenUrl(process.env.SERVER + process.env.PORT + '/breweries');
+    } else {
+      setChosenUrl('https://api.openbrewerydb.org/breweries');
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (list) {
@@ -16,14 +33,16 @@ export default function Search({ list, setList, query, setQuery }) {
     ? alert('Please type in a city first!')
     : axios({
       method: 'get',
-      // url: 'http://localhost:3000/breweries',
-      url: 'https://api.openbrewerydb.org/breweries',
+      url: chosenUrl,
       params: {
         by_city: query
       }
     })
     .then(result => {
-      setList(result.data)
+      if (result.data) {
+        console.log('found data!')
+        setList(result.data)
+      }
     })
     .catch(error => { throw error })
   }
@@ -50,6 +69,12 @@ export default function Search({ list, setList, query, setQuery }) {
           <SearchIcon />
         </IconButton>
       </Paper>
+      <FormGroup>
+        <FormControlLabel control={<Switch
+          checked={checked}
+          onChange={toggleSwitch}
+        />} label="Enable custom DB" />
+      </FormGroup>
     </div>
   )
 }

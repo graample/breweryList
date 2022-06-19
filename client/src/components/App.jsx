@@ -24,5 +24,5 @@ export default function App() {
       />
       <BreweryList list={list}/>
     </div>
-    )
+  );
 };
