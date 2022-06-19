@@ -9,8 +9,6 @@ import SportsBarIcon from '@mui/icons-material/SportsBar';
 import Tooltip from '@mui/material/Tooltip';
 import Chip from '@mui/material/Chip';
 
-import GoogleMap from './GoogleMap.jsx';
-
 export default function BreweryListItem(props) {
   var typeDescription;
   if (props.item.brewery_type === 'micro') {
@@ -38,7 +36,7 @@ export default function BreweryListItem(props) {
   var center;
   props.item.latitude
     ? center = [parseFloat(props.item.latitude), parseFloat(props.item.longitude)]
-    : center = null
+    : center = props.item.street
 
   return (
     <>
@@ -46,7 +44,7 @@ export default function BreweryListItem(props) {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography>{props.item.name}</Typography>
+          <Typography sx={{ mt: 0.5 }}>{props.item.name}</Typography>
           <Tooltip title={typeDescription}>
             <Chip icon={<SportsBarIcon />} label={props.item.brewery_type} sx={{ ml: "auto" }}/>
           </Tooltip>
@@ -60,7 +58,11 @@ export default function BreweryListItem(props) {
           : <Typography sx={{ mb: 1.5 }} color="text.secondary">
           No website provided
           </Typography>}
-          {center ? <GoogleMap center={center}/> : ''}
+          {center
+          ? <div className="google-map-code">
+            <iframe src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAPS}&q=${center}`} width="100%" height="450" style={{border:0}} aria-hidden="false"></iframe>
+          </div>
+          : ''}
         </AccordionDetails>
       </Accordion>
     </>
