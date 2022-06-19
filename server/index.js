@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 // const db = require('./db/postgres.js');
 const app = express();
+const path = require('path');
 const port = process.env.PORT || 3000;
 const cors = require('cors');
 
@@ -12,6 +13,8 @@ app.use(express.json());
 app.get('/test', (req, res) => {
   res.send('test success!');
 });
+
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 app.get('/breweries', (req, res) => {
   console.log(req.query)
