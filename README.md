@@ -2,7 +2,7 @@
 
 A project formed as a week-long coding challenge for RSM powered by the OpenBreweryDB API.
 
-Allows searches to be made for breweries listed in the US, queried by city. Type in the name of a city in the United States, and it'll give you a list of breweries in that city (or cities).
+Allows searches to be made for breweries listed in the US, queried by city. Type in the name of a city in the United States, and it'll give you a list of breweries in that city (or cities). The list uses flex styling, so it doesn't really matter how wide the browser is, the list will adapt.. and overcome. (The intended minimum width for the page is 435px so don't get too carried away.)
 
 Hover over the brewery type, and it'll tell you a little more about that brewery type.
 
@@ -31,6 +31,8 @@ There is a toggle for a custom database of breweries that can be referenced, but
 
 # Future considerations
 
+- Mobile optimization
 - Implement some sort of pagination system.
 - Make my own custom funny icons to add a personal touch.
+- Actually, funny pictures would be cool too.
 - Take screenshots of the breweries and mint them to the blockchain (???)
