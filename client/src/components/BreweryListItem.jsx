@@ -71,8 +71,8 @@ export default function BreweryListItem(props) {
           </Typography>}
           {center
           ? <div className="google-map-code">
-            {console.log(process.env.REACT_APP_MAPS)}
-            <iframe src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPS}&q=${center}`} width="100%" height="450" style={{border:0}} aria-hidden="false"></iframe>
+            {console.log(process.env.MAPS)}
+            <iframe src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAPS}&q=${center}`} width="100%" height="450" style={{border:0}} aria-hidden="false"></iframe>
           </div>
           : ''}
         </AccordionDetails>
