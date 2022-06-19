@@ -16,8 +16,6 @@ export default function Search({ list, setList, query, setQuery }) {
   const toggleSwitch = (e) => {
     setChecked(e.target.checked);
     if (!checked) {
-      console.log(process.env.SERVER)
-      console.log(process.env.PORT)
       setChosenUrl(process.env.SERVER + process.env.PORT + '/breweries');
     } else {
       setChosenUrl('https://api.openbrewerydb.org/breweries');
