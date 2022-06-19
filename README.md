@@ -13,11 +13,11 @@ There is a toggle for a custom database of breweries that can be referenced, but
 
 # How to set up
 
-- specify your API key and local variables in the .env file
+- Specify your API key and local variables in the .env file
 - `npm install`
 - `npm start`
-- navigate to your server/port
-- crack open a cold one ;)
+- Navigate to your server/port
+- Crack open a cold one ;)
 
 
 # Technologies used
