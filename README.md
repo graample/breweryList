@@ -8,7 +8,7 @@ Hover over the brewery type, and it'll tell you a little more about that brewery
 
 Click on a brewery and it'll give you an address and a map location for the given address. If the brewery has a website, you can click the link and it'll open in a new tab. If there is no longitude/latitude given for a particular brewery, the map will automatically switch to whereever the address points to.
 
-There is a toggle for a custom database of breweries that can be referenced, but for now it only has its seed values. Will add a way to add more custom breweries.
+There is a toggle for a custom database of breweries that can be referenced, but for now it only has its seed values (search for "city" and... you'll see what I mean). Will add a way to add more custom breweries.
 
 
 # How to set up
