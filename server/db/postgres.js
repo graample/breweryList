@@ -11,7 +11,10 @@ const pool = new Pool({
 pool.on('error', (err) => {
   console.log('pool error', err);
 });
-pool.connect();
+pool.connect()
+.then(result => {
+  console.log('connected to postgres db')
+})
 
 // Questions List
 var query = (query, cb) => {

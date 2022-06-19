@@ -26,6 +26,7 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.4",
     "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "google-map-react": "^2.1.10",
     "pg": "^8.7.3",

@@ -42,6 +42,7 @@ export default function BreweryListItem(props) {
   props.item.latitude
     ? center = [parseFloat(props.item.latitude), parseFloat(props.item.longitude)]
     : center = null
+
   return (
     <>
       <Accordion TransitionProps={{ unmountOnExit: true }}>

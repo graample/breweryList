@@ -16,6 +16,7 @@ export default function Search({ list, setList, query, setQuery }) {
     ? alert('Please type in a city first!')
     : axios({
       method: 'get',
+      // url: 'http://localhost:3000/breweries',
       url: 'https://api.openbrewerydb.org/breweries',
       params: {
         by_city: query

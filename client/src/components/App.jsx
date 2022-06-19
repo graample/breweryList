@@ -14,7 +14,7 @@ export default function App() {
         Gulp!
       </Typography>
       <Typography variant="h5" component="div">
-        Search for a city in the US
+        Search for a brewery in a US city
       </Typography>
       <Search
         list={list}
